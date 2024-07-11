@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 
-<title>Home - Fresh Mart 1</title>
+<title>Home - Fresh Mart</title>
 
 	<style>
     	body {
