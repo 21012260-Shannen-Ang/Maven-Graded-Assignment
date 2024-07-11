@@ -249,6 +249,7 @@
                 drinkDessert.add(new String[]{"Mini Coke", "6 x 180ml", "5.00", "images/Coke.jpg"});
                 drinkDessert.add(new String[]{"Peppermint Green Tea", "6 x 300ml", "5.00", "images/Pokka.jpg"});
                 drinkDessert.add(new String[]{"Neapolitan Ice Cream", "1.5L", "6.50", "images/IceCream.jpg"});
+                drinkDessert.add(new String[]{"Magnum Ice Cream Pint", "400g", "14.50", "images/Magnum.jpeg"});
                
                 // Iterate through the products and display them
                 for (String[] product : drinkDessert) {
