@@ -56,6 +56,19 @@
 					<label>Email Address</label> <input type="text"value="" class="form-control" name="email">
 					
 				</fieldset>
+	
+				<fieldset class="form-group">
+				
+					<label>Date of Birth</label> <input type="text"value="" class="form-control" name="dob">
+					
+				</fieldset>
+				
+
+				<fieldset class="form-group">
+				
+					<label>Address</label> <input type="text"value="" class="form-control" name="address">
+					
+				</fieldset>
 				
 
 				<fieldset class="form-group"> 
