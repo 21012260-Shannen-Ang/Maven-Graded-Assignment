@@ -59,7 +59,8 @@
 				
 				<fieldset class="form-group">
 				
-					<label>DOB</label> <input type="text"value="" class="form-control" name="DOB">
+					<label>Postal Code</label> <input type="text"value="" class="form-control" name="pc">
+
 					
 				</fieldset>
 
