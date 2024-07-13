@@ -57,9 +57,6 @@
 					
 				</fieldset>
 				
-
-				<fieldset class="form-group"> 
-				
 					<label>Gender</label>
 	
 				        <div class="gender-options">
