@@ -57,6 +57,8 @@
 					
 				</fieldset>
 				
+				<fieldset class="form-group"> 
+				
 					<label>Gender</label>
 	
 				        <div class="gender-options">
@@ -79,6 +81,11 @@
     					</div>
 
 				</fieldset>
+				
+				<button type="submit" class="btn btn-success">Save</button>
+				
+				</form>
+
 				
 				<button type="submit" class="btn btn-success">Save</button>
 				
