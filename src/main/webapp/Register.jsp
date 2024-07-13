@@ -59,7 +59,7 @@
 				
 				<fieldset class="form-group">
 				
-					<label>Address</label> <input type="text"value="" class="form-control" name="add">
+					<label>DOB</label> <input type="text"value="" class="form-control" name="DOB">
 					
 				</fieldset>
 
