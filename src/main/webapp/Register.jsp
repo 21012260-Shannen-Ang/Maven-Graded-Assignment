@@ -57,6 +57,12 @@
 					
 				</fieldset>
 				
+				<fieldset class="form-group">
+				
+					<label>Date Of Birth</label> <input type="text"value="" class="form-control" name="dob">
+					
+				</fieldset>
+
 				<fieldset class="form-group"> 
 				
 					<label>Gender</label>
