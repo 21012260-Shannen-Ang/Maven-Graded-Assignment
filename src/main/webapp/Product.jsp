@@ -205,7 +205,6 @@
                 meatSeafood.add(new String[]{"Pork Belly", "300g", "8.00", "images/Meat.jpg"});
                 meatSeafood.add(new String[]{"Salmon", "350g", "10.00", "images/Salmon.png"});
                 meatSeafood.add(new String[]{"Tiger Prawn", "200g", "3.00", "images/Prawn.jpeg"});
-                meatSeafood.add(new String[]{"Blue Crab", "200g", "9.00", "images/Crab.jpg"});
                
                 // Iterate through the products and display them
                 for (String[] product : meatSeafood) {
