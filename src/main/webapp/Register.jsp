@@ -59,6 +59,10 @@
 				
 				<fieldset class="form-group">
 				
+					<label>Address</label> <input type="text"value="" class="form-control" name="address">
+					
+				</fieldset>
+
 					<label>Date Of Birth</label> <input type="text"value="" class="form-control" name="dob">
 					
 				</fieldset>
