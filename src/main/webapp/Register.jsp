@@ -57,7 +57,11 @@
 					
 				</fieldset>
 				
-					<fieldset class="form-group"> 
+				<fieldset class="form-group">
+				
+					<label>Address</label> <input type="text"value="" class="form-control" name="add">
+					
+				</fieldset>
 
 				
 					<label>Gender</label>
