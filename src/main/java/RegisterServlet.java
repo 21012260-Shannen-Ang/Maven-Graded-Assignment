@@ -53,6 +53,7 @@ public class RegisterServlet extends HttpServlet {
 		String p = request.getParameter("password");
 		String e = request.getParameter("email");
 		String c = request.getParameter("gender");
+		String s = request.getParameter("pc");
 
 		// Step 3: attempt connection to database using JDBC, you can change the
 		// username and password accordingly using the phpMyAdmin > User Account
@@ -65,7 +66,7 @@ public class RegisterServlet extends HttpServlet {
 			// Step 4: implement the sql query using prepared statement
 			// (https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html)
 
-			PreparedStatement ps = con.prepareStatement("insert into ACCOUNTDETAILS values(?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("insert into ACCOUNTDETAILS values(?,?,?,?,?)");
 
 			// Step 5: parse in the data retrieved from the web form request into the
 			// prepared statement accordingly
@@ -74,6 +75,7 @@ public class RegisterServlet extends HttpServlet {
 			ps.setString(2, p);
 			ps.setString(3, e);
 			ps.setString(4, c);
+			ps.setString(5, s);
 
 			// Step 6: perform the query on the database using the prepared statement
 
@@ -96,5 +98,4 @@ public class RegisterServlet extends HttpServlet {
 
 		doGet(request, response);
 	}
-
 }
