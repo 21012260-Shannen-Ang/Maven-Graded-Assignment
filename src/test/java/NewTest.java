@@ -17,7 +17,7 @@ public class NewTest {
 	@Test
 	public void findById() {
 		// Load website as a new page
-		webDriver.navigate().to("http://localhost:8090/GradedAssignment/Contact.jsp");
+		webDriver.navigate().to("http://localhost:8090/Fresh-Mart-project/Contact.jsp");
 
 		// Find WebElement by Id: contact
 		WebElement we = webDriver.findElement(By.id("contact"));
@@ -32,7 +32,7 @@ public class NewTest {
 	@Test
 	public void checkTitle() {
 		// Load website as a new page
-		webDriver.navigate().to("http://localhost:8090/GradedAssignment/");
+		webDriver.navigate().to("http://localhost:8090/Fresh-Mart-project/");
 
 		// Assert the title to check that we are indeed in the correct website
 		Assert.assertEquals(webDriver.getTitle(), "Fresh Mart");
@@ -44,7 +44,7 @@ public class NewTest {
 	@Test
 	public void checkNavigationForAcrossPages() {
 		// Load website as a new page
-		webDriver.navigate().to("http://localhost:8090/GradedAssignment/Product.jsp");
+		webDriver.navigate().to("http://localhost:8090/Fresh-Mart-project/Product.jsp");
 
 		WebElement products_menu_item = webDriver.findElement(By.linkText("Products"));
 
