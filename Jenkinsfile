@@ -13,24 +13,33 @@ pipeline {
                 echo "Clean Complete"
             }
         }
-        stage('Build and Tests') {
+        stage('Build') {
+            steps {
+	            echo "Start build"
+	            bat "mvn install -DskipTests"
+	            echo "Build Complete"
+            }
+        }
+                
+        stage('Tests') {
             parallel {
-                stage('Build') {
-                    steps {
-                        echo "Start build"
-                        bat "mvn install -DskipTests"
-                        echo "Build Complete"
-                    }
-                }
-                stage('JUnit Test') {
-                    
-                  	steps {
-                    	echo "Performing JUnit Tests"
-                    	bat "mvn test"
-                    	echo "JUnit Tests Complete"            
-                  	}    
-               	}
-           }
+        
+                stage('JUnit Tests') {
+            		steps {
+	                echo "Performing JUnit Tests"
+	                bat "mvn test -Pjunit"  // Run JUnit tests using the 'junit' profile
+	                echo "JUnit Tests Complete"            
+            		}    
+        		}
+        		
+		        stage('Selenium Tests') {
+		            steps {
+		                echo "Performing Selenium Tests"
+		                bat "mvn test -Pselenium"  // Run Selenium tests using the 'selenium' profile
+		                echo "Selenium Tests Complete"            
+		            }    
+		        }
+           	}
         }
         stage('SonarQube Analysis') {
             steps {
