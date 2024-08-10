@@ -92,7 +92,9 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<release>11</release> 
+					<release>11</release>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -108,7 +110,7 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>${jacoco.groupId}</groupId>
 				<artifactId>${jacoco.artifactId}</artifactId>
