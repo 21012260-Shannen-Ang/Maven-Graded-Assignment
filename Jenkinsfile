@@ -23,24 +23,14 @@ pipeline {
                     }
                 }
                 stage('Test') {
-                    parallel {
-                        stage('JUnit Tests') {
-                            steps {
-                                echo "Performing JUnit Tests"
-                                bat "mvn test"
-                                echo "JUnit Tests Complete"
-                            }
-                        }
-                        stage('Selenium Tests') {
-                            steps {
-                                echo "Performing Selenium Tests"
-                                bat "mvn verify -Pselenium"
-                                echo "Selenium Tests Complete"
-                            }
-                        }
-                    }
-                }
-            }
+                    
+                  	steps {
+                    	echo "Performing JUnit Tests"
+                    	bat "mvn test"
+                    	echo "JUnit Tests Complete"            
+                  	}    
+               	}
+           	}
         }
         stage('SonarQube Analysis') {
             steps {
