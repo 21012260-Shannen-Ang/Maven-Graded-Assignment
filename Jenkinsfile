@@ -22,24 +22,17 @@ pipeline {
         }
                 
         stage('Tests') {
-            parallel {
+            
         
                 stage('JUnit Tests') {
             		steps {
 	                echo "Performing JUnit Tests"
-	                bat "mvn test -Pjunit"  // Run JUnit tests using the 'junit' profile
+	                bat "mvn test
 	                echo "JUnit Tests Complete"            
             		}    
         		}
-        		
-		        stage('Selenium Tests') {
-		            steps {
-		                echo "Performing Selenium Tests"
-		                bat "mvn test -Pselenium"  // Run Selenium tests using the 'selenium' profile
-		                echo "Selenium Tests Complete"            
-		            }    
-		        }
-           	}
+        	
+           	
         }
         stage('SonarQube Analysis') {
             steps {
