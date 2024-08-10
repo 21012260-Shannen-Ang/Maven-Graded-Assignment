@@ -25,19 +25,12 @@ pipeline {
 
             steps {
 	            echo "Performing JUnit Tests"
-	            bat "mvn test -Dtest=UserFormTest -X"
+	            bat "mvn test"
 	            echo "JUnit Tests Complete"            
             }    
  	
         }
-        
-        stage('Run Selenium Tests') {
-            steps {
-                echo "Performing Selenium Tests"
-                bat "mvn test -Dtest=NewTest"
-                echo "Selenium Tests Complete"
-            }
-        }
+       
         stage('SonarQube Analysis') {
             steps {
                 echo "Performing SonarQube Analysis"
