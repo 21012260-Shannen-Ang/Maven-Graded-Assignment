@@ -31,25 +31,6 @@ pipeline {
  	
         }
        
-        stage('SonarQube Analysis') {
-            steps {
-                echo "Performing SonarQube Analysis"
-                script {
-                    // Trigger the Freestyle project for Sonarqube
-                    build job: 'SonarQube-Analysis'
-                }
-                echo "SonarQube Analysis Complete"
-            }
-        }
-        stage('Deployment') {
-            steps {
-                echo "Deploying to Tomcat"
-                script {
-                    // Trigger the Freestyle project for Tomcat deployment
-                    build job: 'Apache-Tomcat-Deployment'
-                }
-                echo "Deployment to Tomcat Complete"
-            }
-        }
+        
     }
 }
