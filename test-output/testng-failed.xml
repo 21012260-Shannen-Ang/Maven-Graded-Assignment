@@ -6,4 +6,17 @@
       <class name="NewTest"/>
     </classes>
   </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="NewTest">
+        <methods>
+          <include name="findById"/>
+          <include name="checkNavigationForAcrossPages"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="checkTitle"/>
+        </methods>
+      </class> <!-- NewTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
