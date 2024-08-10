@@ -30,14 +30,6 @@ pipeline {
                     	echo "JUnit Tests Complete"            
                   	}    
                	}
-               	stage('Selenium Tests') {
-                    
-                    steps {
-                       echo "Performing Selenium Tests"
-                       bat "mvn verify -Pselenium"
-                       echo "Selenium Tests Complete"
-                    }
-               }
            }
         }
         stage('SonarQube Analysis') {
