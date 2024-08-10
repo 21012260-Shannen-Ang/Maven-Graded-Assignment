@@ -25,7 +25,7 @@ pipeline {
 
             steps {
 	            echo "Performing JUnit Tests"
-	            bat "mvn test -Dtest=UserFormTest"
+	            bat "mvn test -Dtest=UserFormTest -X"
 	            echo "JUnit Tests Complete"            
             }    
  	
