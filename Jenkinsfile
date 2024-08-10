@@ -22,17 +22,13 @@ pipeline {
         }
                 
         stage('Tests') {
-            
-        
-                stage('JUnit Tests') {
-            		steps {
-	                echo "Performing JUnit Tests"
-	                bat "mvn test"
-	                echo "JUnit Tests Complete"            
-            		}    
-        		}
-        	
-           	
+
+            steps {
+	            echo "Performing JUnit Tests"
+	            bat "mvn test"
+	            echo "JUnit Tests Complete"            
+            }    
+ 	
         }
         stage('SonarQube Analysis') {
             steps {
