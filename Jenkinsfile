@@ -27,7 +27,7 @@ pipeline {
                 stage('JUnit Tests') {
             		steps {
 	                echo "Performing JUnit Tests"
-	                bat "mvn test
+	                bat "mvn test"
 	                echo "JUnit Tests Complete"            
             		}    
         		}
