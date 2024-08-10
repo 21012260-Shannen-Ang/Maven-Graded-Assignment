@@ -13,7 +13,7 @@ pipeline {
                 echo "Clean Complete"
             }
         }
-        stage('Build and Test') {
+        stage('Build and Tests') {
             parallel {
                 stage('Build') {
                     steps {
@@ -22,7 +22,7 @@ pipeline {
                         echo "Build Complete"
                     }
                 }
-                stage('Test') {
+                stage('JUnit Test') {
                     
                   	steps {
                     	echo "Performing JUnit Tests"
@@ -30,7 +30,15 @@ pipeline {
                     	echo "JUnit Tests Complete"            
                   	}    
                	}
-           	}
+               	stage('Selenium Tests') {
+                    
+                    steps {
+                       echo "Performing Selenium Tests"
+                       bat "mvn verify -Pselenium"
+                       echo "Selenium Tests Complete"
+                    }
+               }
+           }
         }
         stage('SonarQube Analysis') {
             steps {
