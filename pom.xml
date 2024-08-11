@@ -10,14 +10,7 @@
 	<description>ga</description>
 
 	<properties>
-		<selenium.groupId>org.seleniumhq.selenium</selenium.groupId>
-		<selenium.artifactId>selenium-java</selenium.artifactId>
-		<selenium.version>2.53.1</selenium.version>
-
-		<testng.groupId>org.testng</testng.groupId>
-		<testng.artifactId>testng</testng.artifactId>
-		<testng.version>6.9.10</testng.version>
-
+	
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -39,6 +32,13 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>${junit-jupiter.groupId}</groupId>
+			<artifactId>${junit-jupiter.artifactId}</artifactId>
+			<version>${junit-jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -63,23 +63,11 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
+		
 		<dependency>
-			<groupId>${selenium.groupId}</groupId>
-			<artifactId>${selenium.artifactId}</artifactId>
-			<version>${selenium.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${testng.groupId}</groupId>
-			<artifactId>${testng.artifactId}</artifactId>
-			<version>${testng.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>${junit-jupiter.groupId}</groupId>
-			<artifactId>${junit-jupiter.artifactId}</artifactId>
-			<version>${junit-jupiter.version}</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -104,11 +92,6 @@
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.1</version>
-				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
-				</configuration>
 			</plugin>
 
 			<plugin>
