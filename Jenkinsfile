@@ -107,5 +107,22 @@ pipeline{
 		}
 	
 	}
+	
+	post {
+        success {
+            echo "Pipeline succeeded!"
+            // Actions on success, e.g., sending notifications, archiving artifacts
+        }
+
+        failure {
+            echo "Pipeline failed!"
+            // Actions on failure, e.g., sending notifications, rolling back changes
+        }
+
+        always {
+            echo "This runs regardless of the pipeline result"
+            // Actions that should run regardless of success or failure, e.g., cleanup tasks
+        }
+    }
 
 }
