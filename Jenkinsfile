@@ -33,9 +33,9 @@ pipeline{
 			}
 		}
 		
-		stage('Test & Sonar'){
+		//stage('Test & Sonar'){
 		
-			parallel{
+			//parallel{
 				
 				stage('JUnit Tests'){
 					
@@ -46,7 +46,7 @@ pipeline{
 						echo "JUnit Tests Complete"
 					}
 					
-				}
+				//}
 				
 				stage("SonarQube Analysis"){
 				
@@ -59,9 +59,9 @@ pipeline{
 					}
 				}
 				
-			}
+			//}
 			
-		}
+		//}
 		
 		stage("Deployment"){
 		
