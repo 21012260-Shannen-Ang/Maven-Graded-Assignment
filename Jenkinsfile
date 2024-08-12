@@ -32,37 +32,30 @@ pipeline{
 				echo "Build Complete"
 			}
 		}
-		
-		//stage('Test & Sonar'){
-		
-			//parallel{
-				
-				stage('JUnit Tests'){
+
+		stage('JUnit Tests'){
 					
-					steps{
+			steps{
 						
-						echo "Performing JUnit Tests..."
-						bat "mvn test"
-						echo "JUnit Tests Complete"
-					}
+				echo "Performing JUnit Tests..."
+				bat "mvn test"
+				echo "JUnit Tests Complete"
+			}
 					
-				//}
+		}
 				
-				stage("SonarQube Analysis"){
+		stage("SonarQube Analysis"){
 				
-					steps{
+			steps{
 					
-						echo "Performing SonarQube Analysis..."
-						bat "mvn sonar:sonar -Dsonar.exclusions=**/RegisterServlet.java"
-						echo "SonarQube Analysis Complete"
+				echo "Performing SonarQube Analysis..."
+				bat "mvn sonar:sonar -Dsonar.exclusions=**/RegisterServlet.java"
+				echo "SonarQube Analysis Complete"
 						
-					}
-				}
+			}
+		}
 				
-			//}
-			
-		//}
-		
+
 		stage("Deployment"){
 		
 			steps{
