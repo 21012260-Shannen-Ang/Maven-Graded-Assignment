@@ -60,7 +60,20 @@ pipeline{
 				}
 			}
 		}
-
+		
+		stage("Approval"){
+		
+			steps{
+			
+				script{
+				
+					// Wait for manual approval
+                    input message: 'Approve Deployment?', ok: 'Deploy'
+				}
+			}
+		
+		}
+		
 		stage("Deployment"){
 		
 			steps{
