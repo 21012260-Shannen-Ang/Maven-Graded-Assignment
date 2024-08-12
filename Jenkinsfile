@@ -23,16 +23,6 @@ pipeline{
 		
 		}
 	
-		stage('Build'){
-		
-			steps{
-			
-				echo "Start Build..."
-				bat "mvn install -DskipTests"
-				echo "Build Complete"
-			}
-		}
-
 		stage('JUnit Tests'){
 					
 			steps{
@@ -43,18 +33,33 @@ pipeline{
 			}
 					
 		}
-				
-		stage("SonarQube Analysis"){
-				
-			steps{
+		
+		stage('Build & Sonar'){
+		
+			parallel{
+			
+				stage('Build'){
+			
+					steps{
 					
-				echo "Performing SonarQube Analysis..."
-				bat "mvn sonar:sonar"
-				echo "SonarQube Analysis Complete"
+						echo "Start Build..."
+						bat "mvn install -DskipTests"
+						echo "Build Complete"
+					}
+				}
+					
+				stage("SonarQube Analysis"){
 						
+					steps{
+							
+						echo "Performing SonarQube Analysis..."
+						bat "mvn sonar:sonar"
+						echo "SonarQube Analysis Complete"
+								
+					}
+				}
 			}
 		}
-				
 
 		stage("Deployment"){
 		
