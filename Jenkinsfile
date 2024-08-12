@@ -49,7 +49,7 @@ pipeline{
 			steps{
 					
 				echo "Performing SonarQube Analysis..."
-				bat "mvn sonar:sonar -Dsonar.exclusions=**/RegisterServlet.java"
+				bat "mvn sonar:sonar"
 				echo "SonarQube Analysis Complete"
 						
 			}
