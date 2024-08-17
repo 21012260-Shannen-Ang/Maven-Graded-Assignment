@@ -53,14 +53,35 @@ pipeline{
 					steps{
 							
 						echo "Performing SonarQube Analysis..."
-						bat "mvn sonar:sonar"
+						
+						script{
+						
+						// Trigger the project for SonarQube
+						
+                    	build job: 'Sonarqube'
+                    	
+						}
+						
 						echo "SonarQube Analysis Complete"
 								
 					}
 				}
 			}
 		}
-
+		
+		stage("Approval"){
+		
+			steps{
+			
+				script{
+				
+					// Wait for manual approval
+                    input message: 'Approve Deployment?', ok: 'Deploy'
+				}
+			}
+		
+		}
+		
 		stage("Deployment"){
 		
 			steps{
@@ -77,7 +98,7 @@ pipeline{
 			}
 		}
 		
-		stage("Selenium Test"){
+		stage("Selenium Test"){  //Checking out from another repository for selenium. URL: https://github.com/21012260-Shannen-Ang/Selenium_GA.git
 		
 			steps{
 			
@@ -85,7 +106,7 @@ pipeline{
 				
 				script{
 						
-					// Trigger the project for Tomcat deployment
+					// Trigger the project for Selenium
                     build job: 'Selenium-Test'
 				}
 					
@@ -94,5 +115,22 @@ pipeline{
 		}
 	
 	}
+	
+	post {
+        success {
+            echo "Pipeline succeeded!"
+            // Actions on success, e.g., sending notifications, archiving artifacts
+        }
+
+        failure {
+            echo "Pipeline failed!"
+            // Actions on failure, e.g., sending notifications, rolling back changes
+        }
+
+        always {
+            echo "This runs regardless of the pipeline result"
+            // Actions that should run regardless of success or failure, e.g., cleanup tasks
+        }
+    }
 
 }
