@@ -53,7 +53,15 @@ pipeline{
 					steps{
 							
 						echo "Performing SonarQube Analysis..."
-						bat "mvn sonar:sonar"
+						
+						script{
+						
+						// Trigger the project for SonarQube
+						
+                    	build job: 'Sonarqube'
+                    	
+						}
+						
 						echo "SonarQube Analysis Complete"
 								
 					}
@@ -90,7 +98,7 @@ pipeline{
 			}
 		}
 		
-		stage("Selenium Test"){
+		stage("Selenium Test"){  //Checking out from another repository for selenium. URL: https://github.com/21012260-Shannen-Ang/Selenium_GA.git
 		
 			steps{
 			
@@ -98,7 +106,7 @@ pipeline{
 				
 				script{
 						
-					// Trigger the project for Tomcat deployment
+					// Trigger the project for Selenium
                     build job: 'Selenium-Test'
 				}
 					
