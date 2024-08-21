@@ -17,7 +17,7 @@ pipeline{
 			
 				echo "Start Clean..."
 				bat "mvn clean"
-				echo "Clean Complete"
+				echo "Clean Is Complete"
 			
 			}
 		
